@@ -7,7 +7,8 @@ export default function PokePage() {
     <div style={{ fontFamily: "Arial ,sans-serif" }}>
       <PokeHeader name="Gible" />
       <div> this is my pokepage </div>
-      <img src={"/assets/gible.jpg"}></img>
+      {/* <img src={window.location.hostname + "/assets/gible.jpg"}></img> */}
+      <img src={window.assetRoot + "/gible.jpg"}></img>
     </div>
   )
 }

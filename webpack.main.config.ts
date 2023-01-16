@@ -12,7 +12,7 @@ export const mainConfig: Configuration = {
     maxAssetSize: 4_000_000
   },
   entry: './src/index.ts',
-  mode: process.env.NODE_ENV === "development" ? "development" : "production",
+
   // Put your normal webpack config below here
   module: {
     rules,
