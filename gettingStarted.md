@@ -50,6 +50,23 @@ npm run package # makes folder. self-contained, but cannot pack into single exec
 npm run make # makes installer, single executable, but ofc, not actually single packed, just unpacks and then runs.
 ```
 
+## Warning
+
+React is fat, and we're just straight up bundling it in the output, which isn't necesarily bad, but that's how it works.
+By default on dev straight up without anything + sourceMaps + development is like 1.1megs.
+
+So what we'll do is simply increase the maxAssetSize to something more reasonable using react:
+
+In both webpack configs (main and renderer):
+```ts
+performance: {
+  maxEntrypointSize: 4_000_000, // 4 mb
+  maxAssetSize: 4_000_000
+}
+```
+
+If worried about very highly performance, I recommend you use another method for setting up your electron app, see Final notes below.
+
 
 ## Ensure React prod
 
