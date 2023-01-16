@@ -26,25 +26,15 @@
  * ```
  */
 
-import './index.css';
-
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Counter } from './counter';
+import { App } from './App';
 
-
-console.log('👋 This message is being logged by "renderer.js", included via webpack');
-
-const node = document.querySelector("#react-entry-point")
+const node = document.querySelector("#root")
 if (node === null)
   throw new Error("Unable to find react mountpoint");
 const root = createRoot(node);
 
 root.render(
-  <React.StrictMode>
-    <div>
-      Hello!
-      <Counter />
-    </div>
-  </React.StrictMode>
+  <App />
 )
